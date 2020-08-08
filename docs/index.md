@@ -82,3 +82,35 @@ We could set a different unit length and declare a different canvas area size as
 
 
 This all is just the structure to define the start and end of the picture environment code. Now, we learn how to draw stuff.
+
+
+
+### The `\put` command
+
+
+
+Think of our canvas as a coordinate plane, as if on a graph sheet. **The lower-left corner is the Origin (0,0).** The `\put` command _"puts"_ an _object_ at the given coordinates. 
+
+The syntax of the put command is:
+
+`\put(x, y){object}`
+
+where (x, y) refers to the coordinates where we want to place the object. What kind of object? It can be lines, arrows, circles, and more, as shown in the next section: Drawing.
+
+We can also put some text simply at some coordinates. Consider placing the text _Brainly_ at (2, 3).
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6, 8)
+
+\put(2, 3){\sf Brainly}
+
+\end{picture}
+```
+
+
+
+Now, we learn to actually draw stuff.
+
+
+
