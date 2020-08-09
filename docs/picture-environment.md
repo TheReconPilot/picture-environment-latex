@@ -1,5 +1,3 @@
-[toc]
-
 # Picture Environment - LaTeX on Brainly
 
 \- By Purva, [@QGP](https://brainly.in/app/profile/48021), Brainly India
@@ -180,5 +178,5 @@ The direction vector `(x1, y1)` has a couple of important restrictions on the va
 - **`x1` and `y1` must be relatively prime.** This means that the HCF (Highest Common Factor) or the GCD (Greatest Common Divisor) of x1 and y1 should be 1. That is to say that there should be no common factors.
   - 2 and 3 are relatively prime. However, 4 and 6 are not relatively prime, as they can be divided by a common factor of 2. Hence, (2, 3) is a valid direction vector. Putting in (4, 6) should be fine too, however, it can have unexpected behaviour. So, avoid it.
   - (1, 1) is a valid direction vector. However, (2, 2), (3, 3), (4, 4) and similar others are not valid. They can be reduced to (1, 1). 
-    - If you happen to use (2, 2) or (2, -2) or (-2, 2) or (-2, -2), you will see a stream of arrow-heads instead of a line-segment. Similar unexpected behaviour with variants of (3, 3), (4,4) and more. 
+    - If you happen to use (2, 2) or (2, -2) or (-2, 2) or (-2, -2), you will see a stream of arrow-heads instead of a line-segment. Similar unexpected behaviour with variants of (3, 3), (4, 4) and more. 
 
