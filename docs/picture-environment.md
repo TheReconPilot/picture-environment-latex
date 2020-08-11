@@ -133,7 +133,7 @@ There are various kinds of objects that we can draw. Let's look at them.
 The syntax of a line segment is:
 
 ```latex
-\put(x, y){\line{x1, y1){length}}
+\put(x, y){\line(x1, y1){length}}
 ```
 
 Here:
