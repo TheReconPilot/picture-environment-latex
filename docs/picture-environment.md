@@ -30,7 +30,7 @@ In the Picture Environment, we can imagine a canvas area, where we draw our stuf
 
 ### Defining Unit Length
 
-The first step is defining what 1 unit length means in our system. *1 unit* is an abstract idea of length. On the contrary, 1 cm, 1 mm, 1 inch, etc are all physical and concrete ideas of length which are well-defined.
+The first step is defining what 1 unit length means in our system. *1 unit* is an abstract idea of length. On the contrary, 1 cm, 1 mm, 1 inch, etc. are all physical and concrete ideas of length which are well-defined.
 
 
 
@@ -179,4 +179,142 @@ The direction vector `(x1, y1)` has a couple of important restrictions on the va
   - 2 and 3 are relatively prime. However, 4 and 6 are not relatively prime, as they can be divided by a common factor of 2. Hence, (2, 3) is a valid direction vector. Putting in (4, 6) should be fine too, however, it can have unexpected behaviour. So, avoid it.
   - (1, 1) is a valid direction vector. However, (2, 2), (3, 3), (4, 4) and similar others are not valid. They can be reduced to (1, 1). 
     - If you happen to use (2, 2) or (2, -2) or (-2, 2) or (-2, -2), you will see a stream of arrow-heads instead of a line-segment. Similar unexpected behaviour with variants of (3, 3), (4, 4) and more. 
+
+
+
+---
+
+
+
+#### Tutorial: Drawing a Square
+
+Let's write out first drawing code. We will draw a square. Let's start by setting up the drawing canvas:
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6,6)
+
+code for square to be written here
+
+\end{picture}
+```
+
+
+
+We declared a $\sf 6 \times 6$ cm canvas and now we start by putting in the objects. Let's choose a start point, say (2, 2).
+
+Now, we will first put a line segment starting from (2, 2), pointing vertically upwards, and of length 2 units. 
+
+Taking it step by step, we have:
+
+- _... starting from (2, 2)..._ - `\put(2, 2){}`
+- _...pointing vertically upwards..._ - This means towards to the direction vector (0, 1) - `\line(0, 1){}` 
+
+- _...of length 2 units..._ - `\line(0, 1){2}`
+
+Putting it all together, we have `\put(2, 2){\line(0, 1){2}}`. This will draw our first line segment.
+
+Here's the code and screenshot:
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6,6)
+
+\put(2, 2){\line(0, 1){2}}
+
+\end{picture}
+```
+
+
+
+![line-segment-0](_media/screenshots/line-segment-0.png ':size=460')
+
+
+
+Now, let's draw the top line. Since our first line-segment was 2 units upwards of (2, 2), the end-point is located at (2, 4). 
+
+We can now draw a line-segment starting from (2, 4) towards the right side with a length of 2 units. So...
+
+- _... starting from (2, 4)..._ - `\put(2, 4){}`
+- _...towards the right side..._ - This means towards to the direction vector (1, 0) - `\line(1, 0){}` 
+
+- _...a length of 2 units..._ - `\line(1, 0){2}`
+
+ Thus, our second line-segment is: `\put(2, 4){\line(1, 0){2}}`
+
+
+
+Putting it together, our code now looks like this:
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6,6)
+
+\put(2, 2){\line(0, 1){2}}
+\put(2, 4){\line(1, 0){2}}
+
+\end{picture}
+```
+
+![line-segment-1](_media/screenshots/line-segment-1.png ':size=460')
+
+If you are having trouble visualizing the co-ordinates, here's a labelled image:
+
+![line-segment-1-labelled](_media/screenshots/line-segment-1-labelled.png ':size=460')
+
+
+
+Let's now draw a line-segment starting at (4, 4), towards vertically down and of length 2 units. 
+
+The direction vector for _vertically downwards_ is (0, -1), as like towards the negative y-axis. Hence, the code for our line-segment is `\put(4, 4){\line(0, -1){2}}`.
+
+So, all in all, our code is:
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6,6)
+
+\put(2, 2){\line(0, 1){2}}
+\put(2, 4){\line(1, 0){2}}
+\put(4, 4){\line(0, -1){2}}
+
+\end{picture}
+```
+
+
+
+Here's a co-ordinate labelled screenshot of the above code:
+
+![line-segment-2-labelled](_media/screenshots/line-segment-2-labelled.png ':size=460')
+
+
+
+Finally, we need to add our fourth line-segment and complete the square. As you might have thought already, we can do it in two ways:
+
+1. Line-segment starting at (2, 2), towards the right with length 2 units - `\put(2, 2){\line(1, 0){2}}`
+2. Line-segment starting at (4, 2), towards the left with length 2 units - `\put(4, 2){\line(-1, 0){2}}`
+
+Both ways are correct. I am picking the second way here and completing the code:
+
+**Square**
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6,6)
+
+\put(2, 2){\line(0, 1){2}}
+\put(2, 4){\line(1, 0){2}}
+\put(4, 4){\line(0, -1){2}}
+\put(4, 2){\line(-1, 0){2}}
+
+\end{picture}
+```
+
+Here's how our square looks like:
+
+![square](_media/screenshots/square.png ':size=460')
+
+And that's our first complete diagram with the Picture Environment! 
+
+
 
