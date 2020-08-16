@@ -72,7 +72,7 @@ So, for example, we can display a $\sf 6 \times 8$ cm block as:
 \setlength{\unitlength}{1cm}
 \begin{picture}(6, 8)
 
-code
+    code
 
 \end{picture}
 ```
@@ -105,7 +105,7 @@ We can also put some text simply at some coordinates. Consider placing the text 
 \setlength{\unitlength}{1cm}
 \begin{picture}(6, 8)
 
-\put(2, 3){\sf Brainly}
+    \put(2, 3){\sf Brainly}
 
 \end{picture}
 ```
@@ -194,7 +194,7 @@ Let's write out first drawing code. We will draw a square. Let's start by settin
 \setlength{\unitlength}{1cm}
 \begin{picture}(6,6)
 
-code for square to be written here
+    code for square to be written here
 
 \end{picture}
 ```
@@ -220,7 +220,7 @@ Here's the code and screenshot:
 \setlength{\unitlength}{1cm}
 \begin{picture}(6,6)
 
-\put(2, 2){\line(0, 1){2}}
+    \put(2, 2){\line(0, 1){2}}
 
 \end{picture}
 ```
@@ -250,8 +250,8 @@ Putting it together, our code now looks like this:
 \setlength{\unitlength}{1cm}
 \begin{picture}(6,6)
 
-\put(2, 2){\line(0, 1){2}}
-\put(2, 4){\line(1, 0){2}}
+    \put(2, 2){\line(0, 1){2}}
+    \put(2, 4){\line(1, 0){2}}
 
 \end{picture}
 ```
@@ -274,9 +274,9 @@ So, all in all, our code is:
 \setlength{\unitlength}{1cm}
 \begin{picture}(6,6)
 
-\put(2, 2){\line(0, 1){2}}
-\put(2, 4){\line(1, 0){2}}
-\put(4, 4){\line(0, -1){2}}
+    \put(2, 2){\line(0, 1){2}}
+    \put(2, 4){\line(1, 0){2}}
+    \put(4, 4){\line(0, -1){2}}
 
 \end{picture}
 ```
@@ -302,10 +302,10 @@ Both ways are correct. I am picking the second way here and completing the code:
 \setlength{\unitlength}{1cm}
 \begin{picture}(6,6)
 
-\put(2, 2){\line(0, 1){2}}
-\put(2, 4){\line(1, 0){2}}
-\put(4, 4){\line(0, -1){2}}
-\put(4, 2){\line(-1, 0){2}}
+    \put(2, 2){\line(0, 1){2}}
+    \put(2, 4){\line(1, 0){2}}
+    \put(4, 4){\line(0, -1){2}}
+    \put(4, 2){\line(-1, 0){2}}
 
 \end{picture}
 ```
@@ -354,8 +354,8 @@ Let's consider a simple example:
 \setlength{\unitlength}{1cm}
 \begin{picture}(6, 6)
 
-\put(3, 2){\vector(0, 1){3}}
-\put(2, 3){\vector(1, 0){3}}
+    \put(3, 2){\vector(0, 1){3}}
+    \put(2, 3){\vector(1, 0){3}}
 
 \end{picture}
 ```
@@ -371,6 +371,103 @@ Here's the labelled form if you are having trouble visualizing in terms of co-or
 ![vector-0-labelled](_media/screenshots/vector-0-labelled.png ':size=460')
 
 As we can see, the upward pointing arrow starts at (3, 2). The rightward pointing arrow starts at (2, 3). 
+
+
+
+
+
+---
+
+
+
+### Circles
+
+The syntax of a circle is a simple one:
+
+```latex
+\put(x, y){\circle{diameter}}
+```
+
+This puts a circle of the given diameter centred `(x, y)`. Essentially, `(x, y)` is the centre of the circle.
+
+!> The picture environment only allows diameters up to approximately 1.4 cm (14 mm). Also, not every value below 1.4 cm works. You'll have to experiment a bit and adjust co-ordinates of other objects.
+
+Here's a simple example:
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6, 6)
+
+	\put(3, 3){\circle{1}}
+
+\end{picture}
+```
+
+![circle-0](_media/screenshots/circle-0.png 'size=460')
+
+Let's add a line-segment to show the diameter. The diameter is 1 cm, so radius is 0.5 cm. The circle is centred at (3, 3), so we can start a line-segment from (2.5, 3), which is just 0.5 cm left to the centre.
+
+
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6, 6)
+	\put(3, 3){\circle{1}}
+	\put(2.5, 3){\line(1, 0){1}}
+\end{picture}
+```
+
+
+
+Here's how it looks:
+
+![circle-1](_media/screenshots/circle-1.png 'size=460')
+
+
+
+---
+
+
+
+### Shaded/Filled Circles
+
+To get shaded/filled circles or disks, you just use the `\circle*` command. The syntax is the same:
+
+```latex
+\put(x, y){\circle*{diameter}}
+```
+
+This puts a shaded circle centred at `(x, y)`.
+
+Example:
+
+```latex
+\boxed{
+	\setlength{\unitlength}{1mm}
+	\begin{picture}(45, 20)
+
+		\put(12, 10){\circle*{2}}
+		\put(20, 10){\circle*{4}}
+		\put(30, 10){\circle*{10}}
+
+	\end{picture}
+}
+```
+
+Notice a few things here:
+
+- We have put a box around the canvas area with the `\boxed{}` command.
+- The _unitlength_ is now 1 mm. So, the canvas area is $\sf 45 \times 20$ mm or $\sf 4.5 \times 2$ cm.
+
+Here's how the code looks:
+
+![shaded-circle-0](_media/screenshots/shaded-circle-0.png ':size=460')
+
+
+
+Here's a labelled version to help it understand better:
+
+![shaded-circle-0-labelled](_media/screenshots/shaded-circle-0-labelled.png ':size=460')
 
 
 
