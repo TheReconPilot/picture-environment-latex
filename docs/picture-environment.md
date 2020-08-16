@@ -338,7 +338,15 @@ Here:
 - `(x1, y1)` is the direction vector, pointing towards the direction where the line is to be drawn
 - `length` is the length of the line-segment
 
-The restrictions related to the direction vector apply here too. 
+The [restrictions related to the direction vector as mentioned for line segments](#restrictions-on-the-direction-vector) apply here too. However, there's a small difference: the range is more restricted.
+
+
+
+!> `x1` and `y1` in the direction vector can only take integer values from -4 to 4.
+
+!> `x1` and `y1` must also be co-prime or relatively prime. 
+
+
 
 Let's consider a simple example: 
 
