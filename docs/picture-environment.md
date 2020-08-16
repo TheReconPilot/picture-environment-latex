@@ -318,3 +318,51 @@ And that's our first complete diagram with the Picture Environment!
 
 
 
+---
+
+
+
+### Arrows / Vectors
+
+
+
+Arrows or vectors have the same syntax as a line-segment. The command is `\vector`. The syntax:
+
+```latex
+\put(x, y){\vector(x1, y1){length}}
+```
+
+Here:
+
+- `(x, y)` are the co-ordinates from where the arrow/vector will start from (as the put command starts to place the object from there)
+- `(x1, y1)` is the direction vector, pointing towards the direction where the line is to be drawn
+- `length` is the length of the line-segment
+
+The restrictions related to the direction vector apply here too. 
+
+Let's consider a simple example: 
+
+```latex
+\setlength{\unitlength}{1cm}
+\begin{picture}(6, 6)
+
+\put(3, 2){\vector(0, 1){3}}
+\put(2, 3){\vector(1, 0){3}}
+
+\end{picture}
+```
+
+We have put in two arrows of length 3 units each. One is pointing upwards, i.e. towards (0, 1). The other is pointing towards the right, i.e. towards (1, 0).
+
+![vector-0](_media/screenshots/vector-0.png ':size=460')
+
+
+
+Here's the labelled form if you are having trouble visualizing in terms of co-ordinates.
+
+![vector-0-labelled](_media/screenshots/vector-0-labelled.png ':size=460')
+
+As we can see, the upward pointing arrow starts at (3, 2). The rightward pointing arrow starts at (2, 3). 
+
+
+
