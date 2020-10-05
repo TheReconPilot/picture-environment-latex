@@ -25,20 +25,15 @@ Some sites which are good references for the Picture Environment
 
 ## Running it locally
 
-You can download everything and run the documentation locally on your computer. Simply open the `index.html` file.
+You can download everything and run the documentation locally on your computer. Simply open the `docs/index.html` file.
 
 ### Development/Contributing
 
+The simplest way to contribute is by adding useful content directly to the markdown files in the `docs/` directory. Or else:
 
-- ```bash
-    git clone https://github.com/TheReconPilot/picture-environment-latex.git
-    ```
-- ```bash
-    npm install
-    ```
-- ```bash
-    npm run serve
-    ```
+- `git clone https://github.com/TheReconPilot/picture-environment-latex.git`
+- `npm install`
+- `npm run serve`
 
 This will serve the documentation on `localhost:3000` by default. 
 
